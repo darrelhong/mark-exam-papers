@@ -1,0 +1,18 @@
+{{define "base"}}
+<!DOCTYPE html>
+<html lang="en-SG">
+  <head>
+    {{template "head" .}}
+  </head>
+  <body class="min-h-screen flex flex-col prose max-w-full mx-auto">
+    <header class="bg-slate-300 p-2">
+      <div class="flex gap-2 container mx-auto">
+        <a href="/">Home</a>
+        <a href="/files" class="ms-auto">Upload</a>
+      </div>
+    </header>
+    <main class="flex-1 container mx-auto p-2 {{block "main-extra-class" .}}{{end}}">{{template "main" .}}</main>
+    <footer class="container mx-auto">go + htmx</footer>
+  </body>
+</html>
+{{end}}

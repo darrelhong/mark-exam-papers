@@ -1,0 +1,17 @@
+{{define "title"}}Upload{{end}}
+
+{{define "headextra"}}
+  <script src="https://unpkg.com/htmx.org@1.9.6"></script>
+{{end}}
+
+{{define "main"}}
+  <h1>Upload</h1>
+
+  <form class="grid gap-2 justify-items-start" enctype="multipart/form-data" hx-post="" hx-target="#error-result">
+    <input type="file" id="files" name="files" accept=".pdf" multiple />
+    <button type="submit" class="btn">Submit</button>
+  </form>
+
+  <p id="error-result" class="text-red-500"></p>
+
+{{end}}

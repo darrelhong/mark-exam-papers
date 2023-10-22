@@ -1,0 +1,14 @@
+{{define "head"}}
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{{template "title" .}}</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<style type="text/tailwindcss">
+  @layer components {
+    .btn {
+      @apply px-4 py-2 font-medium bg-slate-300 hover:bg-slate-400;
+    }
+  }
+</style>
+{{block "headextra" .}}{{end}}
+{{end}}

@@ -1,0 +1,39 @@
+{{define "title"}}Home{{end}} 
+
+{{define "headextra"}}
+  <script src="https://unpkg.com/htmx.org@1.9.6"></script>
+{{end}}
+
+{{define "main"}}
+  <h1>Home</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>File Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{range .Files}}
+      <tr>
+        <td>{{.Filename}}</td>
+        <td>
+          <a class="btn inline-block"  href="/files/{{.Id}}/edit">Edit</a>
+        </td>
+        <td>
+          <button
+            type="button"
+            class="btn"
+            hx-delete="files/{{.Id}}"
+            hx-target="closest tr"
+            hx-confirm="Are you sure?"
+            hx-swap="outerHTML"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+      {{end}}
+    </tbody>
+  </table>
+{{end}}

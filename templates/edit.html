@@ -1,0 +1,14 @@
+{{define "title"}}Edit {{.Filename }}{{end}}
+
+{{define "headextra"}}
+  <script src="https://unpkg.com/htmx.org@1.9.6"></script>
+{{end}}
+
+{{define "main-extra-class"}}flex flex-col{{end}}
+
+{{define "main"}}
+  <h1 class="me-auto">Edit</h1>
+  <p>{{.Filename}}</p>
+  
+  <iframe src="/static/pdfjs-dist/web/viewer.html?file={{.EncodedURL}}" title="Edit PDF" class="w-full flex-1"></iframe>
+{{end}}
